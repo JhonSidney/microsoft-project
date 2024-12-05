@@ -10,6 +10,32 @@
 
 </head>
 <body>
+    <div class="container">
+            <header class=" row d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <div class="col-md-3 mb-2 mb-md-0">
+                <a href="{{ url_for('index') }}" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="../static/img /main/logo.png" alt="Descrição da imagem">
+                </a>
+                </div>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ url_for('index')}}" class="nav-link px-2 link-secondary">Início</a></li>
+                <li><a href="{{ url_for('sobre')}}" class="nav-link px-2">Sobre</a></li>
+                <li><a href="{{ url_for('unidades')}}" class="nav-link px-2">Unidades</a></li>
+                <li><a href="{{ url_for('contato')}}" class="nav-link px-2">Contato</a></li>
+                </ul>
+
+                <div class="col-md-3 text-end"> 
+                  <a href="{{ url_for ('register')}}"><button type="button" class="btn btn-primary"><i class="bi bi-database-add"> Registrar</i> </button></a>
+                    {% if current_user.is_authenticated %}
+                          <a href="{{ url_for ('logout')}}"><button type="button" class="btn btn-danger"><i class="bi bi-box-arrow-in-left"></i></button></a>
+                          <a href="{{ url_for ('dashboard')}}"><button type="button" class="btn btn-light"><i class="bi bi-person-square"></i></button></a>           
+                    {% else %}
+                          <a href="{{ url_for ('login')}}"><button type="button" class="btn btn-outline-primary me-2"><i class="bi bi-box-arrow-in-right"> Entrar</i></button></a>
+                    {% endif %}
+                </div>
+                
+            </header>
         <div class="row">
             {% block content %}
           
