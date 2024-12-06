@@ -4,8 +4,8 @@
 
 ### Configuração inicial
 
-### Certifique-se de configurar o arquivo .env (se necessário) com as informações sensíveis, como URI do banco de dados.
-### Execute as migrações do banco de dados:
+### Certifique-se de configurar o arquivo .env (se necessário) com as informações sensíveis no caso estao em .config, para banco de dados.
+### Execute as migrações do banco de dados antes de executar o python3 run.py:
 
 - flask db init
 - flask db migrate -m "Initial migration"
