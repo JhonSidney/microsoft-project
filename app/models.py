@@ -1,4 +1,6 @@
 from . import db
+from flask_login import UserMixin
+
 
 
 class Usuario(db.Model, UserMixin):
@@ -14,3 +16,14 @@ class Aluno(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(100), nullable=False)
     matricula = db.Column(db.String(50), unique=True, nullable=False)
+
+# class Disciplina(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     nome = db.Column(db.String(100), nullable=False)
+#     codigo = db.Column(db.String(50), unique=True, nullable=False)
+
+# class Turma(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     nome = db.Column(db.String(100), nullable=False)
+#     ano = db.Column(db.Integer, nullable=False)
+
