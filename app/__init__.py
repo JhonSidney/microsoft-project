@@ -16,6 +16,10 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
+    # Importa e registra o blueprint dos CRUDs depois que o app é criado
+    from .alunos import alunos as alunos_blueprint
+    app.register_blueprint(alunos_blueprint, url_prefix='/alunos')
+
     # Importa e registra as rotas principais do app
     from . import routes
     routes.init_app(app)
